@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Collective Creativity Workshop</title>
+        <!-- Google Fonts: Montserrat for headings, Roboto for body text -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Tabletop.js for Google Sheets integration -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
+        <style>
+            /* Global Styles */
+            body {
+                font-family: "Roboto", sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #121212;
+                color: #e0e0e0;
+                line-height: 1.6;
+            }
+            h1,
+            h2,
+            h3 {
+                font-family: "Montserrat", sans-serif;
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            /* Header */
+            header {
+                background: linear-gradient(135deg, #2ecc71, #3498db);
+                color: #fff;
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+            header h1 {
+                margin: 0.2em 0;
+                font-size: 2.8em;
+            }
+            header h2 {
+                margin: 0.2em 0;
+                font-weight: 300;
+                font-size: 1.2em;
+            }
+
+            /* Sections */
+            section {
+                max-width: 1000px;
+                margin: 2rem auto;
+                padding: 0 1rem;
+            }
+            section h2 {
+                border-bottom: 2px solid #444;
+                padding-bottom: 0.3rem;
+                margin-bottom: 1rem;
+                font-weight: 600;
+            }
+            section p {
+                margin-bottom: 1rem;
+            }
+
+            /* Participants Section */
+            .participants-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+            .participant {
+                background-color: #1e1e1e;
+                padding: 1rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+                text-align: center;
+                font-weight: 500;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+            .participant:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.7);
+            }
+            .participant a {
+                color: #2ecc71;
+                text-decoration: none;
+            }
+            .participant a:hover {
+                text-decoration: underline;
+            }
+
+            /* Keynotes Section */
+            .keynotes-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+                margin: 2rem 0;
+            }
+            .keynote-card {
+                background: linear-gradient(135deg, #2ecc71, #3498db);
+                border-radius: 8px;
+                padding: 1rem;
+                text-align: center;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+            .keynote-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.7);
+            }
+            .keynote-card img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 50%;
+                margin-bottom: 1rem;
+                border: 4px solid #121212;
+            }
+
+            /* Schedule Section */
+            .schedule {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1rem;
+            }
+            .schedule-day {
+                background: #1e1e1e;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+                padding: 1rem;
+            }
+            .schedule-day h3 {
+                text-align: center;
+                margin-bottom: 1rem;
+                font-weight: 600;
+            }
+            .time-slot {
+                border-left: 4px solid #2ecc71;
+                padding-left: 0.8rem;
+                margin-bottom: 1rem;
+                transition: transform 0.2s ease, background-color 0.2s ease;
+            }
+            .time-slot:hover {
+                background-color: #2a2a2a;
+                transform: translateX(5px);
+            }
+            .time {
+                font-weight: 600;
+                display: block;
+            }
+            .event {
+                font-size: 0.9em;
+                margin-top: 0.2rem;
+            }
+
+            /* Responsive Adjustments */
+            @media (max-width: 768px) {
+                header {
+                    padding: 1.5rem 1rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <h1>Collective Creativity</h1>
+            <h2>Stony Brook University, 23-25 April</h2>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod
+                malesuada. Donec id risus et justo aliquam imperdiet.
+            </p>
+            <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae ab illo inventore veritatis et quasi architecto beatae
+                vitae dicta sunt explicabo.
+            </p>
+        </section>
+
+        <!-- Travel & Logistics Section -->
+        <section id="travel-logistics">
+            <h2>Travel &amp; Logistics</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque vel volutpat felis. In hac habitasse platea
+                dictumst. Curabitur semper felis a nulla ultrices, vitae
+                consequat ligula tincidunt.
+            </p>
+        </section>
+
+        <!-- Participants Section -->
+        <section id="participants">
+            <h2>Participants</h2>
+            <!-- This grid will be dynamically populated from the Google Sheet -->
+            <div class="participants-grid">
+                <p>Loading participants...</p>
+            </div>
+        </section>
+
+        <!-- Keynotes Section -->
+        <section id="keynotes">
+            <h2>Keynotes</h2>
+            <div class="keynotes-grid">
+                <div class="keynote-card">
+                    <img
+                        src="https://as.cornell.edu/sites/default/files/styles/6_4_newsletter/public/2024-09/norijacoby-1316-crop.jpg"
+                        alt="Keynote Speaker 1"
+                    />
+                    <h3>Dr. Nori Jacoby</h3>
+                    <p><strong>Cornell University</strong></p>
+                    <p>Title title title</p>
+                </div>
+                <div class="keynote-card">
+                    <img
+                        src="https://ugc.production.linktr.ee/VFbMuV13Sb6jreID3lzH_uP2W0eY890a02PLp?io=true&size=avatar-v3_0"
+                        alt="Keynote Speaker 2"
+                    />
+                    <h3>Dr. Kate Armstrong</h3>
+                    <p><strong>AI Futures for Art and Design</strong></p>
+                    <p>Title title title</p>
+                </div>
+            </div>
+        </section>
+        <!-- Schedule Section -->
+        <section id="schedule">
+            <h2>Schedule</h2>
+            <div class="schedule">
+                <!-- Day 1 -->
+                <div class="schedule-day">
+                    <h3>Day 1<br /><small>April 23</small></h3>
+                    <div class="time-slot">
+                        <span class="time">9:00 AM</span>
+                        <span class="event">Registration &amp; Welcome</span>
+                    </div>
+                    <div class="time-slot">
+                        <span class="time">10:00 AM</span>
+                        <span class="event"
+                            >Keynote: The Power of Collaboration</span
+                        >
+                    </div>
+                    <div class="time-slot">
+                        <span class="time">12:00 PM</span>
+                        <span class="event">Lunch Break</span>
+                    </div>
+                    <div class="time-slot">
+                        <span class="time">1:00 PM</span>
+                        <span class="event"
+                            >Workshop: Creative Brainstorming</span
+                        >
+                    </div>
+                    <div class="time-slot">
+                        <span class="time">3:00 PM</span>
+                        <span class="event">Coffee Break</span>
+                    </div>
+                    <div class="time-slot">
+                        <span class="time">3:30 PM</span>
+                        <span class="event">Interactive Session</span>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="schedule-day">
+                    <h3>Day 2<br /><small>April 24</small></h3>
+                    <div class="time-slot">
+                        <span class="time">9:00 AM</span>
+                        <span class="event"
+                            >Morning Coffee &amp; Networking</span
+                        >
+                    </div>
+                    <div class="time-slot">
+                        <span class="time">10:00 AM</span>
+                        <span class="event">Session: Innovative Practices</span>
+                    </div>
+                    <div class="time-slot">
+                        <span class="time">12:00 PM</span>
+                        <span class="event">Lunch Break</span>
+                    </div>
+                    <div class="time-slot">
+                        <span class="time">1:00 PM</span>
+                        <span class="event">Panel Discussion</span>
+                    </div>
+                    <div class="time-slot">
+                        <span class="time">3:00 PM</span>
+                        <span class="event">Breakout Sessions</span>
+                    </div>
+                    <div class="time-slot">
+                        <span class="time">4:30 PM</span>
+                        <span class="event">Wrap-Up</span>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="schedule-day">
+                    <h3>Day 3<br /><small>April 25</small></h3>
+                    <div class="time-slot">
+                        <span class="time">10:00 AM</span>
+                        <span class="event">Post-Workshop Recap</span>
+                    </div>
+                    <div class="time-slot">
+                        <span class="time">11:00 AM</span>
+                        <span class="event"
+                            >Collaborative Project Showcase</span
+                        >
+                    </div>
+                    <div class="time-slot">
+                        <span class="time">1:00 PM</span>
+                        <span class="event">Farewell Lunch</span>
+                    </div>
+                    <div class="time-slot">
+                        <span class="time">2:30 PM</span>
+                        <span class="event">Closing Remarks</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- JavaScript to pull participants from the Google Sheet -->
+        <script>
+            window.addEventListener('DOMContentLoaded', init);
+            function init() {
+              Tabletop.init({
+                key: '18G_uP38Dlfy8vEJPolOmLXHLTSjRviPHddFwvBekCXU',
+                simpleSheet: true,
+                callback: function(data) {
+                  // Filter rows where "Attendance" is "Yes"
+                  let filtered = data.filter(row => row.Attendance && row.Attendance.trim().toLowerCase() === 'Yes');
+                  // Sort alphabetically by "Name"
+                  filtered.sort((a, b) => a.Name.localeCompare(b.Name));
+
+                  const container = document.querySelector('.participants-grid');
+                  container.innerHTML = ''; // Clear the loading message
+
+                  filtered.forEach(row => {
+                    const name = row.Name;
+                    const link = row.Link;
+                    const participantDiv = document.createElement('div');
+                    participantDiv.className = 'participant';
+                    participantDiv.innerHTML = `<a href="${link}" target="_blank">${name}</a>`;
+                    container.appendChild(participantDiv);
+                  });
+                }
+              });
+            }
+        </script>
+    </body>
+</html>
