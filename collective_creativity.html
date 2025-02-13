@@ -11,8 +11,6 @@
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400&display=swap"
             rel="stylesheet"
         />
-        <!-- Tabletop.js for Google Sheets integration -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
         <style>
             /* Global Styles */
             body {
@@ -23,10 +21,12 @@
                 color: #e0e0e0;
                 line-height: 1.6;
             }
-            h1,
-            h2,
-            h3 {
+            h1, h2, h3 {
                 font-family: "Montserrat", sans-serif;
+            }
+            p a {
+                color: #27ae60; /* Your chosen color */
+                text-decoration: underline;
             }
             a {
                 text-decoration: none;
@@ -68,8 +68,8 @@
 
             /* Participants Section */
             .participants-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                display: flex;
+                flex-wrap: wrap;
                 gap: 1rem;
             }
             .participant {
@@ -80,6 +80,7 @@
                 text-align: center;
                 font-weight: 500;
                 transition: transform 0.2s ease, box-shadow 0.2s ease;
+                white-space: nowrap; /* Prevents line breaks within the box */
             }
             .participant:hover {
                 transform: translateY(-5px);
@@ -152,8 +153,14 @@
                 font-weight: 600;
                 display: block;
             }
-            .event {
+            /* Ensure the event name and location are on separate lines */
+            .time-slot .event, 
+            .time-slot .location {
+                display: block;
+            }
+            .time-slot .location {
                 font-size: 0.9em;
+                color: #27ae60;
                 margin-top: 0.2rem;
             }
 
@@ -169,22 +176,32 @@
         <!-- Header -->
         <header>
             <h1>Collective Creativity</h1>
-            <h2>Stony Brook University, 23-25 April</h2>
+            <h2>Institute for Advanced Computational Science, Stony Brook University</h2>
+            <h3>23-25 April 2025</h3>
         </header>
 
         <!-- Overview Section -->
         <section id="overview">
             <h2>Overview</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod
-                malesuada. Donec id risus et justo aliquam imperdiet.
+                This workshop will be an in-person, interdisciplinary event on "Collective Creativity", organized by 
+                <a href="https://masonyoungblood.com/" target="_blank">Mason Youngblood</a> (IACS), 
+                <a href="https://www.linkedin.com/in/katie-mudd-23512a111/" target="_blank">Katie Mudd</a> (IACS), 
+                <a href="https://www.stonybrook.edu/commcms/music/people/faculty-and-staff/composition/margaret_schedel.php" target="_blank">Margaret Schedel</a> (Music), 
+                <a href="https://owenrambow.com/" target="_blank">Owen Rambow</a> (Linguistics), and 
+                <a href="https://jkodner05.github.io/" target="_blank">Jordan Kodner</a> (Linguistics) at Stony Brook University, 
+                from 23-25 April 2025. This workshop will bring together experts from cognitive science, cultural evolution, and related fields, 
+                alongside practicing artists and humanities scholars, to explore the mechanisms driving creativity in language, music, and other domains.
             </p>
             <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo.
+                Our aim is to foster meaningful discussions and generate new research ideas that address the "big questions" in creativity science, 
+                focusing especially on the social and cognitive factors that shape innovation. The three-day event will be held across several venues on campus, 
+                including the Institute for Advanced Computational Science, the Frank Melville Jr. Memorial Library, and the Humanities Institute. The format will 
+                include private research talks and brainstorm sessions, as well as public keynotes and panel discussions, facilitating interdisciplinary exchange. 
+                The participants will include a diverse group of early-career researchers and senior scholars who approach research on creativity from a variety of 
+                different perspectives: cognitive science, cultural evolution, linguistics, digital humanities, philosophy, and computational neuroscience. 
+                Those attending the workshop will also have the opportunity to contribute to a collaborative review paper on the state of scientific research in 
+                creativity, to be published in a major interdisciplinary journal.
             </p>
         </section>
 
@@ -192,19 +209,35 @@
         <section id="travel-logistics">
             <h2>Travel &amp; Logistics</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque vel volutpat felis. In hac habitasse platea
-                dictumst. Curabitur semper felis a nulla ultrices, vitae
-                consequat ligula tincidunt.
+                Stony Brook is easily accessible by train from JFK, LGA, and EWR (although it's a bit further away). The closest LIRR stops are Stony Brook (on campus) 
+                and Ronkonkoma (a short cab ride away). Out-of-town participants will stay at the 
+                <a href="https://www.hilton.com/en/hotels/ispsbgi-hilton-garden-inn-stony-brook/" target="_blank">Hilton Garden Inn</a> which is about a five minute 
+                walk to IACS. We are expecting that most participants will arrive on the 22nd, and check out on either the 25th or the 26th (we know several folks are 
+                already talking about going into NYC for a long weekend starting on that Friday). For travel or logistics questions, please email 
+                <a href="mailto:chelsey.dollinger@stonybrook.edu">Chelsey Dollinger</a>.
             </p>
         </section>
 
         <!-- Participants Section -->
         <section id="participants">
             <h2>Participants</h2>
-            <!-- This grid will be dynamically populated from the Google Sheet -->
             <div class="participants-grid">
-                <p>Loading participants...</p>
+                <div class="participant"><a href="https://www.manuelangladatort.com/" target="_blank">Manuel Anglada-Tort</a></div>
+                <div class="participant"><a href="https://linktr.ee/katearmstrong" target="_blank">Kate Armstrong</a></div>
+                <div class="participant"><a href="https://www.stephaniedinkins.com/" target="_blank">Stephanie Dinkins</a></div>
+                <div class="participant"><a href="https://www.hofstra.edu/faculty-staff/faculty-profile.html?id=373" target="_blank">Simona Doboli</a></div>
+                <div class="participant"><a href="https://www.ece.stonybrook.edu/~adoboli/" target="_blank">Alex Doboli</a></div>
+                <div class="participant"><a href="https://www.norijacoby.com/" target="_blank">Nori Jacoby</a></div>
+                <div class="participant"><a href="https://jkodner05.github.io/" target="_blank">Jordan Kodner</a></div>
+                <div class="participant"><a href="https://scholar.google.com/citations?user=WdulSbUAAAAJ&hl=en" target="_blank">Elena Miu</a></div>
+                <div class="participant"><a href="https://www.linkedin.com/in/katie-mudd-23512a111/" target="_blank">Katie Mudd</a></div>
+                <div class="participant"><a href="https://www.gold.ac.uk/psychology/staff/omigie/" target="_blank">Diana Omigie</a></div>
+                <div class="participant"><a href="https://rajarammemorylab.com" target="_blank">Suparna Rajaram</a></div>
+                <div class="participant"><a href="https://owenrambow.com/" target="_blank">Owen Rambow</a></div>
+                <div class="participant"><a href="https://www.stonybrook.edu/commcms/music/people/faculty-and-staff/composition/margaret_schedel.php" target="_blank">Margaret Schedel</a></div>
+                <div class="participant"><a href="https://www.sobch.uk/" target="_blank">Oleg Sobchuk</a></div>
+                <div class="participant"><a href="http://ofer.sci.ccny.cuny.edu/" target="_blank">Ofer Tchernichovski</a></div>
+                <div class="participant"><a href="https://masonyoungblood.com/" target="_blank">Mason Youngblood</a></div>
             </div>
         </section>
 
@@ -214,24 +247,25 @@
             <div class="keynotes-grid">
                 <div class="keynote-card">
                     <img
-                        src="https://as.cornell.edu/sites/default/files/styles/6_4_newsletter/public/2024-09/norijacoby-1316-crop.jpg"
+                        src="https://ugc.production.linktr.ee/VFbMuV13Sb6jreID3lzH_uP2W0eY890a02PLp?io=true&size=avatar-v3_0"
                         alt="Keynote Speaker 1"
                     />
-                    <h3>Dr. Nori Jacoby</h3>
-                    <p><strong>Cornell University</strong></p>
-                    <p>Title title title</p>
+                    <h3>Kate Armstrong</h3>
+                    <p><strong>AI Futures for Art and Design</strong></p>
+                    <p>Title TBD</p>
                 </div>
                 <div class="keynote-card">
                     <img
-                        src="https://ugc.production.linktr.ee/VFbMuV13Sb6jreID3lzH_uP2W0eY890a02PLp?io=true&size=avatar-v3_0"
+                        src="https://as.cornell.edu/sites/default/files/styles/6_4_newsletter/public/2024-09/norijacoby-1316-crop.jpg"
                         alt="Keynote Speaker 2"
                     />
-                    <h3>Dr. Kate Armstrong</h3>
-                    <p><strong>AI Futures for Art and Design</strong></p>
-                    <p>Title title title</p>
+                    <h3>Nori Jacoby</h3>
+                    <p><strong>Cornell University</strong></p>
+                    <p>How biology and culture shape music perception</p>
                 </div>
             </div>
         </section>
+
         <!-- Schedule Section -->
         <section id="schedule">
             <h2>Schedule</h2>
@@ -241,31 +275,33 @@
                     <h3>Day 1<br /><small>April 23</small></h3>
                     <div class="time-slot">
                         <span class="time">9:00 AM</span>
-                        <span class="event">Registration &amp; Welcome</span>
+                        <span class="event">Coffee</span>
+                        <span class="location">IACS</span>
                     </div>
                     <div class="time-slot">
-                        <span class="time">10:00 AM</span>
-                        <span class="event"
-                            >Keynote: The Power of Collaboration</span
-                        >
+                        <span class="time">9:30 AM</span>
+                        <span class="event">Talks: Cultural Evolution &amp; History</span>
+                        <span class="location">IACS</span>
                     </div>
                     <div class="time-slot">
                         <span class="time">12:00 PM</span>
-                        <span class="event">Lunch Break</span>
+                        <span class="event">Lunch</span>
+                        <span class="location">IACS</span>
                     </div>
                     <div class="time-slot">
-                        <span class="time">1:00 PM</span>
-                        <span class="event"
-                            >Workshop: Creative Brainstorming</span
-                        >
+                        <span class="time">2:00 PM</span>
+                        <span class="event">General Discussion</span>
+                        <span class="location">IACS</span>
                     </div>
                     <div class="time-slot">
-                        <span class="time">3:00 PM</span>
-                        <span class="event">Coffee Break</span>
+                        <span class="time">5:00-6:30 PM</span>
+                        <span class="event">Keynote 1: Nori Jacoby</span>
+                        <span class="location">Library (Room TBD)</span>
                     </div>
                     <div class="time-slot">
-                        <span class="time">3:30 PM</span>
-                        <span class="event">Interactive Session</span>
+                        <span class="time">7:00 PM</span>
+                        <span class="event">Dinner</span>
+                        <span class="location">TBD</span>
                     </div>
                 </div>
 
@@ -274,29 +310,33 @@
                     <h3>Day 2<br /><small>April 24</small></h3>
                     <div class="time-slot">
                         <span class="time">9:00 AM</span>
-                        <span class="event"
-                            >Morning Coffee &amp; Networking</span
-                        >
+                        <span class="event">Coffee</span>
+                        <span class="location">IACS</span>
                     </div>
                     <div class="time-slot">
-                        <span class="time">10:00 AM</span>
-                        <span class="event">Session: Innovative Practices</span>
+                        <span class="time">9:30 AM</span>
+                        <span class="event">Talks: AI &amp; Practice</span>
+                        <span class="location">IACS</span>
                     </div>
                     <div class="time-slot">
                         <span class="time">12:00 PM</span>
-                        <span class="event">Lunch Break</span>
+                        <span class="event">Lunch</span>
+                        <span class="location">IACS</span>
                     </div>
                     <div class="time-slot">
-                        <span class="time">1:00 PM</span>
-                        <span class="event">Panel Discussion</span>
+                        <span class="time">2:00 PM</span>
+                        <span class="event">General Discussion</span>
+                        <span class="location">IACS</span>
                     </div>
                     <div class="time-slot">
-                        <span class="time">3:00 PM</span>
-                        <span class="event">Breakout Sessions</span>
+                        <span class="time">5:00-6:30 PM</span>
+                        <span class="event">Keynote 2: Kate Armstrong</span>
+                        <span class="location">Humanities Institute (Room 1008)</span>
                     </div>
                     <div class="time-slot">
-                        <span class="time">4:30 PM</span>
-                        <span class="event">Wrap-Up</span>
+                        <span class="time">7:00 PM</span>
+                        <span class="event">Dinner</span>
+                        <span class="location">TBD</span>
                     </div>
                 </div>
 
@@ -304,54 +344,27 @@
                 <div class="schedule-day">
                     <h3>Day 3<br /><small>April 25</small></h3>
                     <div class="time-slot">
-                        <span class="time">10:00 AM</span>
-                        <span class="event">Post-Workshop Recap</span>
+                        <span class="time">9:00 AM</span>
+                        <span class="event">Coffee</span>
+                        <span class="location">IACS</span>
                     </div>
                     <div class="time-slot">
-                        <span class="time">11:00 AM</span>
-                        <span class="event"
-                            >Collaborative Project Showcase</span
-                        >
+                        <span class="time">9:30 AM</span>
+                        <span class="event">Talks: Cognition &amp; Experiments</span>
+                        <span class="location">IACS</span>
+                    </div>
+                    <div class="time-slot">
+                        <span class="time">12:00 PM</span>
+                        <span class="event">Lunch</span>
+                        <span class="location">IACS</span>
                     </div>
                     <div class="time-slot">
                         <span class="time">1:00 PM</span>
-                        <span class="event">Farewell Lunch</span>
-                    </div>
-                    <div class="time-slot">
-                        <span class="time">2:30 PM</span>
-                        <span class="event">Closing Remarks</span>
+                        <span class="event">General Discussion</span>
+                        <span class="location">TBD</span>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- JavaScript to pull participants from the Google Sheet -->
-        <script>
-            window.addEventListener('DOMContentLoaded', init);
-            function init() {
-              Tabletop.init({
-                key: '18G_uP38Dlfy8vEJPolOmLXHLTSjRviPHddFwvBekCXU',
-                simpleSheet: true,
-                callback: function(data) {
-                  // Filter rows where "Attendance" is "Yes"
-                  let filtered = data.filter(row => row.Attendance && row.Attendance.trim().toLowerCase() === 'Yes');
-                  // Sort alphabetically by "Name"
-                  filtered.sort((a, b) => a.Name.localeCompare(b.Name));
-
-                  const container = document.querySelector('.participants-grid');
-                  container.innerHTML = ''; // Clear the loading message
-
-                  filtered.forEach(row => {
-                    const name = row.Name;
-                    const link = row.Link;
-                    const participantDiv = document.createElement('div');
-                    participantDiv.className = 'participant';
-                    participantDiv.innerHTML = `<a href="${link}" target="_blank">${name}</a>`;
-                    container.appendChild(participantDiv);
-                  });
-                }
-              });
-            }
-        </script>
     </body>
 </html>
