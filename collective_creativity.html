@@ -8,37 +8,102 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
             rel="stylesheet"
         />
         <style>
             /* Global Styles */
-            body {
-                font-family: "Roboto", sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #121212;
-                color: #e0e0e0;
-                line-height: 1.6;
-            }
-            h1, h2, h3, h4, h5 {
-                font-family: "Montserrat", sans-serif;
-            }
-            p a {
-                color: #27ae60; /* Your chosen color */
-                text-decoration: underline;
-            }
-            a {
-                text-decoration: none;
-                color: inherit;
-            }
-
-            /* Talk Categories Colors */
             :root {
                 --cultural-evolution-color: #e74c3c; /* Red */
                 --cognition-experiments-color: #3498db; /* Blue */
                 --ai-practice-color: #9b59b6; /* Purple */
                 --logistics-color: #2ecc71; /* Green */
+                --dark-bg: #121212;
+                --card-bg: #1e1e1e;
+                --text-primary: #e0e0e0;
+                --text-secondary: #aaaaaa;
+                --border-radius: 10px;
+                --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+                --transition: all 0.3s ease;
+            }
+            
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            
+            body {
+                font-family: "Roboto", sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: var(--dark-bg);
+                color: var(--text-primary);
+                line-height: 1.6;
+                font-size: 16px;
+            }
+            
+            h1, h2, h3, h4, h5 {
+                font-family: "Montserrat", sans-serif;
+                font-weight: 600;
+                margin-bottom: 1rem;
+            }
+            
+            h1 {
+                font-size: 3.2em;
+                font-weight: 700;
+            }
+            
+            h2 {
+                font-size: 2.2em;
+                position: relative;
+                display: inline-block;
+                margin-bottom: 1.5rem;
+            }
+            
+            h2::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(90deg, 
+                    var(--cultural-evolution-color), 
+                    var(--cognition-experiments-color), 
+                    var(--ai-practice-color), 
+                    var(--logistics-color));
+            }
+            
+            p {
+                margin-bottom: 1.5rem;
+                font-size: 1.05em;
+                line-height: 1.7;
+            }
+            
+            p a {
+                color: #27ae60;
+                text-decoration: none;
+                border-bottom: 1px dotted #27ae60;
+                transition: var(--transition);
+            }
+            
+            p a:hover {
+                color: #2ecc71;
+                border-bottom: 1px solid #2ecc71;
+            }
+            
+            a {
+                text-decoration: none;
+                color: inherit;
+                transition: var(--transition);
+            }
+
+            /* Container for all sections */
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
             }
 
             /* Header with textured gradient */
@@ -53,241 +118,490 @@
                 animation: gradientShift 15s ease infinite;
                 color: #fff;
                 text-align: center;
-                padding: 2rem 1rem;
+                padding: 3.5rem 1rem;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+                position: relative;
+                overflow: hidden;
             }
+            
+            header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgogIDxmaWx0ZXIgaWQ9Im5vaXNlIj4KICAgIDxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjY1IiBudW1PY3RhdmVzPSIzIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIj48L2ZlVHVyYnVsZW5jZT4KICAgIDxmZUJsZW5kIG1vZGU9Im92ZXJsYXkiIGluMj0iU291cmNlR3JhcGhpYyI+PC9mZUJsZW5kPgogIDwvZmlsdGVyPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZSkiIG9wYWNpdHk9IjAuMSI+PC9yZWN0Pgo8L3N2Zz4=');
+                opacity: 0.15;
+            }
+            
             @keyframes gradientShift {
                 0% { background-position: 0% 50%; }
                 50% { background-position: 100% 50%; }
                 100% { background-position: 0% 50%; }
             }
+            
             header h1 {
                 margin: 0.2em 0;
-                font-size: 2.8em;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             }
+            
             header h2 {
                 margin: 0.2em 0;
-                font-weight: 300;
-                font-size: 1.2em;
+                font-weight: 400;
+                font-size: 1.4em;
+                opacity: 0.9;
+            }
+            
+            header h2::after {
+                display: none;
+            }
+            
+            header h3 {
+                font-size: 1.3em;
+                font-weight: 500;
+                margin-top: 1rem;
+                opacity: 0.9;
             }
 
             /* Sections */
             section {
-                max-width: 1000px;
-                margin: 2rem auto;
-                padding: 0 1rem;
+                max-width: 1200px;
+                margin: 4rem auto;
+                padding: 0 2rem;
             }
-            section h2 {
-                border-bottom: 2px solid #444;
-                padding-bottom: 0.3rem;
-                margin-bottom: 1rem;
-                font-weight: 600;
-            }
-            section p {
-                margin-bottom: 1rem;
+            
+            section:first-of-type {
+                margin-top: 3rem;
             }
 
             /* Category legend */
             .category-legend {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 1rem;
-                margin-bottom: 1.5rem;
+                gap: 1.2rem;
+                margin-bottom: 2rem;
                 justify-content: center;
+                background-color: rgba(30, 30, 30, 0.7);
+                padding: 1.2rem;
+                border-radius: var(--border-radius);
+                box-shadow: var(--box-shadow);
             }
+            
             .legend-item {
                 display: flex;
                 align-items: center;
-                margin-right: 1rem;
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                background-color: rgba(0, 0, 0, 0.2);
+                transition: var(--transition);
             }
+            
+            .legend-item:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            }
+            
             .legend-color {
-                width: 16px;
-                height: 16px;
-                border-radius: 4px;
-                margin-right: 8px;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                margin-right: 10px;
+                box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
             }
 
             /* Participants Section */
             .participants-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1.2rem;
             }
+            
             .participant {
-                background-color: #1e1e1e;
+                background-color: var(--card-bg);
                 padding: 1rem;
-                border-radius: 8px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+                border-radius: var(--border-radius);
+                box-shadow: var(--box-shadow);
                 text-align: center;
                 font-weight: 500;
-                transition: transform 0.2s ease, box-shadow 0.2s ease;
-                white-space: nowrap; /* Prevents line breaks within the box */
-                border-left: 4px solid var(--logistics-color); /* Default border */
+                transition: var(--transition);
+                position: relative;
+                overflow: hidden;
+                border-left: 4px solid var(--logistics-color);
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
+            
+            .participant::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            }
+            
             .participant:hover {
                 transform: translateY(-5px);
-                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.7);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
             }
+            
             .participant a {
                 color: #2ecc71;
                 text-decoration: none;
+                padding: 0.5rem;
+                display: block;
+                font-size: 1.05em;
+                transition: var(--transition);
             }
+            
             .participant a:hover {
-                text-decoration: underline;
+                color: #3ee890;
+                transform: scale(1.05);
             }
             
             /* Category-specific participant styling */
             .participant.cultural-evolution {
                 border-left: 4px solid var(--cultural-evolution-color);
             }
+            
             .participant.cognition-experiments {
                 border-left: 4px solid var(--cognition-experiments-color);
             }
+            
             .participant.ai-practice {
                 border-left: 4px solid var(--ai-practice-color);
             }
 
-            /* Keynotes Section - Updated */
+            /* Keynotes Section */
             .keynotes-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 2rem;
-                margin: 2rem 0;
-                grid-auto-rows: auto; /* Allow rows to size based on content */
-                align-items: start; /* Align items to the start of the cell */
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2.5rem;
+                margin: 2.5rem 0;
+                /* Remove grid's align-items property to allow cards to have their own height */
+                align-items: start;
             }
-
+            
             .keynote-card {
-                background: linear-gradient(135deg, #2ecc71, #3498db);
-                border-radius: 8px;
-                padding: 1rem;
-                text-align: left;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+                border-radius: var(--border-radius);
+                overflow: hidden;
+                box-shadow: var(--box-shadow);
                 display: flex;
                 flex-direction: column;
-                height: auto; /* Allow height to be determined by content */
-                position: relative; /* For absolute positioning of expanded content */
+                /* Remove fixed height to allow natural expansion */
+                position: relative;
+                transition: var(--transition);
             }
-            .keynote-card.ai-practice {
+            
+            .keynote-header {
+                padding: 1.5rem;
+                position: relative;
+                z-index: 1;
+                text-align: center;
+            }
+            
+            .keynote-card.ai-practice .keynote-header {
                 background: linear-gradient(135deg, #9b59b6, #8e44ad);
             }
-            .keynote-card.cognition-experiments {
+            
+            .keynote-card.cognition-experiments .keynote-header {
                 background: linear-gradient(135deg, #3498db, #2980b9);
             }
-            .keynote-card.cultural-evolution {
+            
+            .keynote-card.cultural-evolution .keynote-header {
                 background: linear-gradient(135deg, #e74c3c, #c0392b);
             }
+            
+            .keynote-header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgogIDxmaWx0ZXIgaWQ9Im5vaXNlIj4KICAgIDxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjY1IiBudW1PY3RhdmVzPSIzIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIj48L2ZlVHVyYnVsZW5jZT4KICAgIDxmZUJsZW5kIG1vZGU9Im92ZXJsYXkiIGluMj0iU291cmNlR3JhcGhpYyI+PC9mZUJsZW5kPgogIDwvZmlsdGVyPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZSkiIG9wYWNpdHk9IjAuMiI+PC9yZWN0Pgo8L3N2Zz4=');
+                opacity: 0.2;
+                z-index: -1;
+            }
+            
             .keynote-card img {
-                width: 150px;
-                height: 150px;
+                width: 160px;
+                height: 160px;
                 object-fit: cover;
                 border-radius: 50%;
-                margin: 0 auto 1rem;
-                border: 4px solid #121212;
-                display: block;
+                margin: 0 auto 1.2rem;
+                border: 4px solid rgba(255, 255, 255, 0.2);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                transition: var(--transition);
             }
+            
+            .keynote-card:hover img {
+                transform: scale(1.05);
+                border-color: rgba(255, 255, 255, 0.4);
+            }
+            
             .keynote-card h3 {
-                margin-bottom: 0;
-                text-align: center;
+                margin-bottom: 0.3rem;
+                font-size: 1.6em;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             }
+            
             .keynote-card h4 {
-                margin-top: 0.5em;
-                margin-bottom: 1em;
-                text-align: center;
-                font-size: 1em;
+                margin-top: 0.5rem;
+                margin-bottom: 1rem;
+                font-size: 1.1em;
+                font-weight: 400;
+                opacity: 0.9;
             }
+            
+            .keynote-content {
+                background-color: var(--card-bg);
+                padding: 1.5rem;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+            }
+            
             .keynote-details {
                 display: none;
-                margin-top: 1rem;
-                padding-top: 1rem;
-                border-top: 1px solid rgba(255, 255, 255, 0.3);
+                margin-top: 1.2rem;
+                padding-top: 1.2rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                opacity: 0;
+                transform: translateY(10px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
             }
+            
+            .keynote-details.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
             .keynote-details h5 {
                 margin-top: 0;
-                margin-bottom: 0.5em;
-                font-weight: bold;
+                margin-bottom: 0.8rem;
+                font-weight: 600;
+                font-size: 1.1em;
+                color: #ffffff;
             }
-            .keynote-details .abstract, .keynote-details .bio {
-                margin-top: 0.5em;
-                margin-bottom: 1em;
-                font-size: 0.9em;
+            
+            .keynote-details .abstract, 
+            .keynote-details .bio {
+                margin-top: 0.5rem;
+                margin-bottom: 1.5rem;
+                font-size: 0.95em;
+                line-height: 1.7;
+                color: var(--text-secondary);
             }
+            
             .expand-button {
                 background-color: rgba(0, 0, 0, 0.3);
                 border: none;
                 color: #fff;
-                padding: 0.5rem 1rem;
-                border-radius: 4px;
+                padding: 0.7rem 1.2rem;
+                border-radius: 30px;
                 cursor: pointer;
                 margin-top: auto;
-                transition: background-color 0.2s ease;
+                transition: var(--transition);
                 font-family: "Montserrat", sans-serif;
                 font-size: 0.9em;
+                font-weight: 500;
+                align-self: center;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             }
+            
             .expand-button:hover {
                 background-color: rgba(0, 0, 0, 0.5);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            }
+            
+            .expand-button:active {
+                transform: translateY(0);
             }
 
-            /* Schedule Section - Removed hover effect */
+            /* Schedule Section */
             .schedule {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 1rem;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
             }
+            
             .schedule-day {
-                background: #1e1e1e;
-                border-radius: 8px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-                padding: 1rem;
+                background: var(--card-bg);
+                border-radius: var(--border-radius);
+                box-shadow: var(--box-shadow);
+                padding: 1.5rem;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
             }
+            
+            .schedule-day::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(90deg, 
+                    var(--cultural-evolution-color), 
+                    var(--cognition-experiments-color), 
+                    var(--ai-practice-color), 
+                    var(--logistics-color));
+            }
+            
             .schedule-day h3 {
                 text-align: center;
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
                 font-weight: 600;
+                font-size: 1.5em;
+                padding-bottom: 0.8rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
+            
+            .schedule-day h3 small {
+                display: block;
+                font-size: 0.7em;
+                opacity: 0.7;
+                margin-top: 0.3rem;
+            }
+            
+            .time-slots-container {
+                position: relative;
+            }
+            
+            .time-slots-container::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 10px;
+                width: 2px;
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+            
             .time-slot {
-                border-left: 4px solid var(--logistics-color);
-                padding-left: 0.8rem;
-                margin-bottom: 1rem;
+                position: relative;
+                padding-left: 2rem;
+                margin-bottom: 1.5rem;
+                padding-bottom: 1.5rem;
+                border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
             }
+            
+            .time-slot:last-child {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+            
+            .time-slot::before {
+                content: '';
+                position: absolute;
+                left: 6px;
+                top: 8px;
+                width: 10px;
+                height: 10px;
+                background-color: var(--logistics-color);
+                border-radius: 50%;
+                z-index: 1;
+            }
+            
+            .time-slot.cultural-evolution::before {
+                background-color: var(--cultural-evolution-color);
+            }
+            
+            .time-slot.cognition-experiments::before {
+                background-color: var(--cognition-experiments-color);
+            }
+            
+            .time-slot.ai-practice::before {
+                background-color: var(--ai-practice-color);
+            }
+            
             .time {
                 font-weight: 600;
                 display: block;
-            }
-            /* Ensure the event name and location are on separate lines */
-            .time-slot .event, 
-            .time-slot .location {
-                display: block;
-            }
-            .time-slot .location {
-                font-size: 0.9em;
-                color: #27ae60;
-                margin-top: 0.2rem;
+                margin-bottom: 0.4rem;
+                font-size: 1.05em;
             }
             
-            /* Category-specific time slot styling */
-            .time-slot.cultural-evolution {
-                border-left: 4px solid var(--cultural-evolution-color);
+            .time-slot .event {
+                display: block;
+                font-size: 1.1em;
+                margin-bottom: 0.3rem;
             }
-            .time-slot.cognition-experiments {
-                border-left: 4px solid var(--cognition-experiments-color);
-            }
-            .time-slot.ai-practice {
-                border-left: 4px solid var(--ai-practice-color);
+            
+            .time-slot .location {
+                display: block;
+                font-size: 0.9em;
+                color: #27ae60;
+                margin-top: 0.3rem;
             }
 
             /* Responsive Adjustments */
-            @media (max-width: 768px) {
-                header {
-                    padding: 1.5rem 1rem;
+            @media (max-width: 1024px) {
+                section {
+                    padding: 0 1.5rem;
+                }
+                
+                .keynotes-grid {
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
                 }
             }
-            section#keynotes {
-                margin-bottom: 4rem;
+            
+            @media (max-width: 768px) {
+                header {
+                    padding: 2rem 1rem;
+                }
+                
+                header h1 {
+                    font-size: 2.5em;
+                }
+                
+                h2 {
+                    font-size: 1.8em;
+                }
+                
+                .participants-grid {
+                    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                }
+                
+                .keynotes-grid {
+                    gap: 2rem;
+                }
+                
+                .schedule {
+                    grid-template-columns: 1fr;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                header h1 {
+                    font-size: 2em;
+                }
+                
+                header h2 {
+                    font-size: 1.2em;
+                }
+                
+                .participant a {
+                    font-size: 0.95em;
+                }
+                
+                .keynote-card img {
+                    width: 130px;
+                    height: 130px;
+                }
             }
         </style>
         <script>
-            // Updated script to handle the expand/collapse functionality
             document.addEventListener('DOMContentLoaded', function() {
+                // Handle expand/collapse functionality for keynote cards
                 const expandButtons = document.querySelectorAll('.expand-button');
                 
                 expandButtons.forEach(button => {
@@ -296,11 +610,23 @@
                         const details = card.querySelector('.keynote-details');
                         
                         if (details.style.display === 'block') {
-                            details.style.display = 'none';
+                            // Collapse
+                            details.classList.remove('visible');
+                            
+                            // After animation completes, hide the element
+                            setTimeout(() => {
+                                details.style.display = 'none';
+                            }, 300);
+                            
                             this.textContent = 'Expand for details';
-                            card.style.height = 'auto';
                         } else {
+                            // Expand
                             details.style.display = 'block';
+                            
+                            // Force reflow to ensure the transition works
+                            void details.offsetWidth;
+                            
+                            details.classList.add('visible');
                             this.textContent = 'Collapse details';
                         }
                     });
@@ -311,242 +637,268 @@
     <body>
         <!-- Header -->
         <header>
-            <h1>Collective Creativity</h1>
-            <h2>Institute for Advanced Computational Science, Stony Brook University</h2>
-            <h3>23-25 April 2025</h3>
+            <div class="container">
+                <h1>Collective Creativity</h1>
+                <h2>Institute for Advanced Computational Science, Stony Brook University</h2>
+                <h3>23-25 April 2025</h3>
+            </div>
         </header>
 
         <!-- Overview Section -->
         <section id="overview">
-            <h2>Overview</h2>
-            <p>
-                This workshop will be an in-person, interdisciplinary event on "Collective Creativity", organized by 
-                <a href="https://masonyoungblood.com/" target="_blank">Mason Youngblood</a> (IACS), 
-                <a href="https://www.linkedin.com/in/katie-mudd-23512a111/" target="_blank">Katie Mudd</a> (IACS), 
-                <a href="https://www.stonybrook.edu/commcms/music/people/faculty-and-staff/composition/margaret_schedel.php" target="_blank">Margaret Schedel</a> (Music), 
-                <a href="https://owenrambow.com/" target="_blank">Owen Rambow</a> (Linguistics), and 
-                <a href="https://jkodner05.github.io/" target="_blank">Jordan Kodner</a> (Linguistics) at Stony Brook University, 
-                from 23-25 April 2025. This workshop will bring together experts from cognitive science, cultural evolution, and related fields, 
-                alongside practicing artists and humanities scholars, to explore the mechanisms driving creativity in language, music, and other domains.
-            </p>
-            <p>
-                Our aim is to foster meaningful discussions and generate new research ideas that address the "big questions" in creativity science, 
-                focusing especially on the social and cognitive factors that shape innovation. The three-day event will be held across several venues on campus, 
-                including the Institute for Advanced Computational Science, the Frank Melville Jr. Memorial Library, and the Humanities Institute. The format will 
-                include private research talks and brainstorm sessions, as well as public keynotes and panel discussions, facilitating interdisciplinary exchange. 
-                The participants will include a diverse group of early-career researchers and senior scholars who approach research on creativity from a variety of 
-                different perspectives: cognitive science, cultural evolution, linguistics, digital humanities, philosophy, and computational neuroscience. 
-                Those attending the workshop will also have the opportunity to contribute to a collaborative review paper on the state of scientific research in 
-                creativity, to be published in a major outlet like <i>NeurIPS</i> or <i>Trends in Cognitive Sciences</i>.
-            </p>
+            <div class="container">
+                <h2>Overview</h2>
+                <p>
+                    This workshop will be an in-person, interdisciplinary event on "Collective Creativity", organized by 
+                    <a href="https://masonyoungblood.com/" target="_blank">Mason Youngblood</a> (IACS), 
+                    <a href="https://www.linkedin.com/in/katie-mudd-23512a111/" target="_blank">Katie Mudd</a> (IACS), 
+                    <a href="https://www.stonybrook.edu/commcms/music/people/faculty-and-staff/composition/margaret_schedel.php" target="_blank">Margaret Schedel</a> (Music), 
+                    <a href="https://owenrambow.com/" target="_blank">Owen Rambow</a> (Linguistics), and 
+                    <a href="https://jkodner05.github.io/" target="_blank">Jordan Kodner</a> (Linguistics) at Stony Brook University, 
+                    from 23-25 April 2025. This workshop will bring together experts from cognitive science, cultural evolution, and related fields, 
+                    alongside practicing artists and humanities scholars, to explore the mechanisms driving creativity in language, music, and other domains.
+                </p>
+                <p>
+                    Our aim is to foster meaningful discussions and generate new research ideas that address the "big questions" in creativity science, 
+                    focusing especially on the social and cognitive factors that shape innovation. The three-day event will be held across several venues on campus, 
+                    including the Institute for Advanced Computational Science, the Frank Melville Jr. Memorial Library, and the Humanities Institute. The format will 
+                    include private research talks and brainstorm sessions, as well as public keynotes and panel discussions, facilitating interdisciplinary exchange. 
+                    The participants will include a diverse group of early-career researchers and senior scholars who approach research on creativity from a variety of 
+                    different perspectives: cognitive science, cultural evolution, linguistics, digital humanities, philosophy, and computational neuroscience. 
+                    Those attending the workshop will also have the opportunity to contribute to a collaborative review paper on the state of scientific research in 
+                    creativity, to be published in a major outlet like <i>NeurIPS</i> or <i>Trends in Cognitive Sciences</i>.
+                </p>
+            </div>
         </section>
 
         <!-- Travel & Logistics Section -->
         <section id="travel-logistics">
-            <h2>Travel &amp; Logistics</h2>
-            <p>
-                Stony Brook is easily accessible by train from JFK, LGA, and EWR (although it's a bit further away). The closest LIRR stops are Stony Brook (on campus) 
-                and Ronkonkoma (a short cab ride away). Out-of-town participants will stay at the 
-                <a href="https://www.hilton.com/en/hotels/ispsbgi-hilton-garden-inn-stony-brook/" target="_blank">Hilton Garden Inn</a> which is about a five minute 
-                walk to IACS. We are expecting that most participants will arrive on the 22nd, and check out on either the 25th or the 26th (we know several folks are 
-                already talking about going into NYC for a long weekend starting on that Friday). For travel or logistics questions, please email 
-                <a href="mailto:chelsey.dollinger@stonybrook.edu">Chelsey Dollinger</a>.
-            </p>
+            <div class="container">
+                <h2>Travel &amp; Logistics</h2>
+                <p>
+                    Stony Brook is easily accessible by train from JFK, LGA, and EWR (although it's a bit further away). The closest LIRR stops are Stony Brook (on campus) 
+                    and Ronkonkoma (a short cab ride away). Out-of-town participants will stay at the 
+                    <a href="https://www.hilton.com/en/hotels/ispsbgi-hilton-garden-inn-stony-brook/" target="_blank">Hilton Garden Inn</a> which is about a five minute 
+                    walk to IACS. We are expecting that most participants will arrive on the 22nd, and check out on either the 25th or the 26th (we know several folks are 
+                    already talking about going into NYC for a long weekend starting on that Friday). For travel or logistics questions, please email 
+                    <a href="mailto:chelsey.dollinger@stonybrook.edu">Chelsey Dollinger</a>.
+                </p>
+            </div>
         </section>
 
         <!-- Participants Section -->
         <section id="participants">
-            <h2>Participants</h2>
-            <p>
-                We have done our best to assign all participants to one of three loose and non-exclusive themes, which correspond to the three morning sessions during the workshop. More details on this soon!
-            </p>
-            <div class="category-legend">
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: var(--cultural-evolution-color);"></div>
-                    <span>Cultural Evolution & History</span>
+            <div class="container">
+                <h2>Participants</h2>
+                <p>
+                    We have done our best to assign all participants to one of three loose and non-exclusive themes, which correspond to the three morning sessions during the workshop. More details on this soon!
+                </p>
+                <div class="category-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--cultural-evolution-color);"></div>
+                        <span>Cultural Evolution & History</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--cognition-experiments-color);"></div>
+                        <span>Cognition & Experiments</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--ai-practice-color);"></div>
+                        <span>AI & Practice</span>
+                    </div>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: var(--cognition-experiments-color);"></div>
-                    <span>Cognition & Experiments</span>
+                <div class="participants-grid">
+                    <div class="participant cognition-experiments"><a href="https://www.manuelangladatort.com/" target="_blank">Manuel Anglada-Tort</a></div>
+                    <div class="participant ai-practice"><a href="https://linktr.ee/katearmstrong" target="_blank">Kate Armstrong</a></div>
+                    <div class="participant ai-practice"><a href="https://satyartharora.com/" target="_blank">Satyarth Arora</a></div>
+                    <div class="participant cultural-evolution"><a href="https://www.brookebelisle.com/" target="_blank">Brooke Belisle</a></div>
+                    <div class="participant ai-practice"><a href="https://www.stephaniedinkins.com/" target="_blank">Stephanie Dinkins</a></div>
+                    <div class="participant cognition-experiments"><a href="https://www.hofstra.edu/faculty-staff/faculty-profile.html?id=373" target="_blank">Simona Doboli</a></div>
+                    <div class="participant cognition-experiments"><a href="https://www.ece.stonybrook.edu/~adoboli/" target="_blank">Alex Doboli</a></div>
+                    <div class="participant ai-practice"><a href="https://ai.vub.ac.be/team/nick-harley/" target="_blank">Nick Harley</a></div>
+                    <div class="participant cognition-experiments"><a href="https://www.norijacoby.com/" target="_blank">Nori Jacoby</a></div>
+                    <div class="participant cultural-evolution"><a href="https://jkodner05.github.io/" target="_blank">Jordan Kodner</a></div>
+                    <div class="participant cultural-evolution"><a href="https://scholar.google.com/citations?user=WdulSbUAAAAJ&hl=en" target="_blank">Elena Miu</a></div>
+                    <div class="participant cultural-evolution"><a href="https://www.linkedin.com/in/katie-mudd-23512a111/" target="_blank">Katie Mudd</a></div>
+                    <div class="participant cognition-experiments"><a href="https://www.gold.ac.uk/psychology/staff/omigie/" target="_blank">Diana Omigie</a></div>
+                    <div class="participant cognition-experiments"><a href="https://rajarammemorylab.com" target="_blank">Suparna Rajaram</a></div>
+                    <div class="participant ai-practice"><a href="https://owenrambow.com/" target="_blank">Owen Rambow</a></div>
+                    <div class="participant ai-practice"><a href="https://www.stonybrook.edu/commcms/music/people/faculty-and-staff/composition/margaret_schedel.php" target="_blank">Margaret Schedel</a></div>
+                    <div class="participant cultural-evolution"><a href="https://www.sobch.uk/" target="_blank">Oleg Sobchuk</a></div>
+                    <div class="participant cognition-experiments"><a href="http://ofer.sci.ccny.cuny.edu/" target="_blank">Ofer Tchernichovski</a></div>
+                    <div class="participant cultural-evolution"><a href="https://nickwilsonsoc.org/blog/" target="_blank">Nick Wilson</a></div>
+                    <div class="participant cultural-evolution"><a href="https://masonyoungblood.com/" target="_blank">Mason Youngblood</a></div>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: var(--ai-practice-color);"></div>
-                    <span>AI & Practice</span>
-                </div>
-            </div>
-            <div class="participants-grid">
-                <div class="participant cognition-experiments"><a href="https://www.manuelangladatort.com/" target="_blank">Manuel Anglada-Tort</a></div>
-                <div class="participant ai-practice"><a href="https://linktr.ee/katearmstrong" target="_blank">Kate Armstrong</a></div>
-                <div class="participant ai-practice"><a href="https://satyartharora.com/" target="_blank">Satyarth Arora</a></div>
-                <div class="participant cultural-evolution"><a href="https://www.brookebelisle.com/" target="_blank">Brooke Belisle</a></div>
-                <div class="participant ai-practice"><a href="https://www.stephaniedinkins.com/" target="_blank">Stephanie Dinkins</a></div>
-                <div class="participant cognition-experiments"><a href="https://www.hofstra.edu/faculty-staff/faculty-profile.html?id=373" target="_blank">Simona Doboli</a></div>
-                <div class="participant cognition-experiments"><a href="https://www.ece.stonybrook.edu/~adoboli/" target="_blank">Alex Doboli</a></div>
-                <div class="participant ai-practice"><a href="https://ai.vub.ac.be/team/nick-harley/" target="_blank">Nick Harley</a></div>
-                <div class="participant cognition-experiments"><a href="https://www.norijacoby.com/" target="_blank">Nori Jacoby</a></div>
-                <div class="participant cultural-evolution"><a href="https://jkodner05.github.io/" target="_blank">Jordan Kodner</a></div>
-                <div class="participant cultural-evolution"><a href="https://scholar.google.com/citations?user=WdulSbUAAAAJ&hl=en" target="_blank">Elena Miu</a></div>
-                <div class="participant cultural-evolution"><a href="https://www.linkedin.com/in/katie-mudd-23512a111/" target="_blank">Katie Mudd</a></div>
-                <div class="participant cognition-experiments"><a href="https://www.gold.ac.uk/psychology/staff/omigie/" target="_blank">Diana Omigie</a></div>
-                <div class="participant cognition-experiments"><a href="https://rajarammemorylab.com" target="_blank">Suparna Rajaram</a></div>
-                <div class="participant ai-practice"><a href="https://owenrambow.com/" target="_blank">Owen Rambow</a></div>
-                <div class="participant ai-practice"><a href="https://www.stonybrook.edu/commcms/music/people/faculty-and-staff/composition/margaret_schedel.php" target="_blank">Margaret Schedel</a></div>
-                <div class="participant cultural-evolution"><a href="https://www.sobch.uk/" target="_blank">Oleg Sobchuk</a></div>
-                <div class="participant cognition-experiments"><a href="http://ofer.sci.ccny.cuny.edu/" target="_blank">Ofer Tchernichovski</a></div>
-                <div class="participant cultural-evolution"><a href="https://nickwilsonsoc.org/blog/" target="_blank">Nick Wilson</a></div>
-                <div class="participant cultural-evolution"><a href="https://masonyoungblood.com/" target="_blank">Mason Youngblood</a></div>
             </div>
         </section>
 
         <!-- Keynotes Section - Updated with expandable details -->
         <section id="keynotes">
-            <h2>Keynotes</h2>
-            <div class="keynotes-grid">
-                <div class="keynote-card ai-practice">
-                    <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfHLsBO1Dg2BMdsmXIwQML8DZgQqS9BIQWyA&s"
-                        alt="Kate Armstrong"
-                    />
-                    <h3>Kate Armstrong</h3>                    
-                    <h4>AI as an artist: improvisation, participation, and generative system</h4>
-                    <div class="keynote-details">
-                        <h5>ABSTRACT</h5>
-                        <p class="abstract">As artificial intelligence becomes an active force in creative domains, the boundaries between artist, audience, and machine blur. This talk explores three AI-driven projects—KEKE Terminal, Botto, and Sasha Stiles' AI collaborator Technelegy—and examines how they compare to historical artistic movements such as jazz improvisation, Happenings, live coding, and generative art. Through these comparisons, Armstrong will investigate AI's role as an autonomous creative agent, the function of community participation, and the shifting dynamics of authorship. KEKE Terminal operates as an autonomous AI artist, generating ideas without human direction. Botto functions as a generative artist guided by decentralized community curation. Sasha Stiles' poetic collaborations challenge traditional notions of literary authorship and raise questions about what it means to be human in an era of rapid technological transformation. Through these case studies, Armstrong will consider the broader implications of AI-driven art relating to questions about whether creativity is inherently human, or whether machines can participate meaningfully in the creative process.</p>
-                        
-                        <h5>BIO</h5>
-                        <p class="bio">Kate Armstrong is a Vancouver-based artist, writer, and independent curator with over 20 years of experience in the cultural sector with a focus on intersections between art and technology. As a curator she has produced exhibitions, events and publications internationally. She founded the early internet art organization Upgrade Vancouver, collaborated with the Goethe Institut to develop the nomadic project space Goethe Satellite, and was an Artistic Director of the 21st International Symposium on Electronic Arts. Armstrong has served as president of the board of directors at Western Front, curator and board member at New Forms Festival, and is currently Trustee and Chair of the Acquisitions Committee at the Vancouver Art Gallery. Renowned as a pioneer in generative literature, her work spans generative text and image systems, speculative fiction, blockchain text-poetry, video, dynamic graphic novels, and location-aware fiction, among other conceptually driven hybrid forms. She has exhibited her work internationally at the Contemporary Art Centre (Vilnius, Lithuania), Psy-Geo-Conflux (New York), Akbank Sanat (Istanbul, Turkey), and was included in Dreamlands: Immersive Cinema and Art 1905–2016 at the Whitney Museum. She was part of Poeme Objkt Subjkt curated by the Verseverse for L'Avant Gallerie Vossen in Paris, which was shortlisted for the 2023 Lumen Prize in Crypto Art, and showed as part of Reimagine Tomorrow, 1954-2024 curated by <a href="https://www.expanded.art/" target="_blank">EXPANDED.art</a> at the first AI Biennale in 2024 in Essen, Germany. Armstrong's artworks are held in collections including Rhizome, the Rose Goldsen Archive at Cornell University, and the Library of the Printed Web. As Director of Living Labs at Emily Carr University of Art + Design she specialized in cross-sector partnerships and founded the Shumka Centre for Creative Entrepreneurship, which helps emerging artists and designers realize complex real-world initiatives, with the goal of updating our broader cultural, social, and economic understanding of the impact art and design-led activities can have in the public sphere. Her current work and research about impacts of AI on art and design can be found at <a href="https://aifutures.substack.com/" target="_blank">https://aifutures.substack.com/</a>.</p>
+            <div class="container">
+                <h2>Keynotes</h2>
+                <div class="keynotes-grid">
+                    <div class="keynote-card ai-practice">
+                        <div class="keynote-header">
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfHLsBO1Dg2BMdsmXIwQML8DZgQqS9BIQWyA&s"
+                                alt="Kate Armstrong"
+                            />
+                            <h3>Kate Armstrong</h3>                    
+                            <h4>AI as an artist: improvisation, participation, and generative system</h4>
+                        </div>
+                        <div class="keynote-content">
+                            <div class="keynote-details">
+                                <h5>ABSTRACT</h5>
+                                <p class="abstract">As artificial intelligence becomes an active force in creative domains, the boundaries between artist, audience, and machine blur. This talk explores three AI-driven projects—KEKE Terminal, Botto, and Sasha Stiles' AI collaborator Technelegy—and examines how they compare to historical artistic movements such as jazz improvisation, Happenings, live coding, and generative art. Through these comparisons, Armstrong will investigate AI's role as an autonomous creative agent, the function of community participation, and the shifting dynamics of authorship. KEKE Terminal operates as an autonomous AI artist, generating ideas without human direction. Botto functions as a generative artist guided by decentralized community curation. Sasha Stiles' poetic collaborations challenge traditional notions of literary authorship and raise questions about what it means to be human in an era of rapid technological transformation. Through these case studies, Armstrong will consider the broader implications of AI-driven art relating to questions about whether creativity is inherently human, or whether machines can participate meaningfully in the creative process.</p>
+                                
+                                <h5>BIO</h5>
+                                <p class="bio">Kate Armstrong is a Vancouver-based artist, writer, and independent curator with over 20 years of experience in the cultural sector with a focus on intersections between art and technology. As a curator she has produced exhibitions, events and publications internationally. She founded the early internet art organization Upgrade Vancouver, collaborated with the Goethe Institut to develop the nomadic project space Goethe Satellite, and was an Artistic Director of the 21st International Symposium on Electronic Arts. Armstrong has served as president of the board of directors at Western Front, curator and board member at New Forms Festival, and is currently Trustee and Chair of the Acquisitions Committee at the Vancouver Art Gallery. Renowned as a pioneer in generative literature, her work spans generative text and image systems, speculative fiction, blockchain text-poetry, video, dynamic graphic novels, and location-aware fiction, among other conceptually driven hybrid forms. She has exhibited her work internationally at the Contemporary Art Centre (Vilnius, Lithuania), Psy-Geo-Conflux (New York), Akbank Sanat (Istanbul, Turkey), and was included in Dreamlands: Immersive Cinema and Art 1905–2016 at the Whitney Museum. She was part of Poeme Objkt Subjkt curated by the Verseverse for L'Avant Gallerie Vossen in Paris, which was shortlisted for the 2023 Lumen Prize in Crypto Art, and showed as part of Reimagine Tomorrow, 1954-2024 curated by <a href="https://www.expanded.art/" target="_blank">EXPANDED.art</a> at the first AI Biennale in 2024 in Essen, Germany. Armstrong's artworks are held in collections including Rhizome, the Rose Goldsen Archive at Cornell University, and the Library of the Printed Web. As Director of Living Labs at Emily Carr University of Art + Design she specialized in cross-sector partnerships and founded the Shumka Centre for Creative Entrepreneurship, which helps emerging artists and designers realize complex real-world initiatives, with the goal of updating our broader cultural, social, and economic understanding of the impact art and design-led activities can have in the public sphere. Her current work and research about impacts of AI on art and design can be found at <a href="https://aifutures.substack.com/" target="_blank">https://aifutures.substack.com/</a>.</p>
+                            </div>
+                            <button class="expand-button">Expand for details</button>
+                        </div>
                     </div>
-                    <button class="expand-button">Expand for details</button>
-                </div>
-                <div class="keynote-card cognition-experiments">
-                    <img
-                        src="https://as.cornell.edu/sites/default/files/styles/6_4_newsletter/public/2024-09/norijacoby-1316-crop.jpg"
-                        alt="Nori Jacoby"
-                    />
-                    <h3>Nori Jacoby</h3>                    
-                    <h4>How biology and culture shape music perception</h4>
-                    <div class="keynote-details">
-                        <h5>ABSTRACT</h5>
-                        <p class="abstract">Music is shaped by both biological and cultural factors, but the extent of each influence is not fully understood. This is partly due to biases in recruitment, as studies often rely on English-speaking students. Additionally, existing behavioral techniques are frequently unsuited for cross-cultural research and lack the capability to capture rich and complex perceptual spaces. In this talk, I will discuss my work in addressing these limitations, covering two complementary lines of research. First, I will explore computational techniques and global fieldwork to examine how diverse populations—including small-scale societies and traditional music experts—conceptualize pitch, melody, and rhythm. Second, I will discuss the expansion of online studies using innovative methods such as tapping and singing, alongside efforts to broaden participant recruitment to speakers from over 60 countries. Our findings highlight the need to reassess assumptions about which musical elements are universally shared and which are shaped by cultural differences.</p>
-                        
-                        <h5>BIO</h5>
-                        <p class="bio">Nori Jacoby is an Assistant Professor at Cornell University and a Research Group Leader at the Max Planck Institute for Empirical Aesthetics in Frankfurt. His research explores the internal representations that shape sensory and cognitive abilities, examining how these representations are influenced by both innate biological factors and cultural experiences.To tackle these fundamental questions, he develops innovative methodologies, combining machine learning with behavioral experiments and scaling experimental research through large-scale online studies and global fieldwork. Nori earned his Ph.D. at the Edmond and Lily Safra Center for Brain Sciences (ELSC) at the Hebrew University of Jerusalem, under the supervision of Naftali Tishby and Merav Ahissar. He then pursued postdoctoral research at MIT in Josh McDermott's Computational Audition Lab, at UC Berkeley in Tom Griffiths's Computational Cognitive Science Lab, and as a Presidential Scholar in Society and Neuroscience at Columbia University.</p>
+                    <div class="keynote-card cognition-experiments">
+                        <div class="keynote-header">
+                            <img
+                                src="https://as.cornell.edu/sites/default/files/styles/6_4_newsletter/public/2024-09/norijacoby-1316-crop.jpg"
+                                alt="Nori Jacoby"
+                            />
+                            <h3>Nori Jacoby</h3>                    
+                            <h4>How biology and culture shape music perception</h4>
+                        </div>
+                        <div class="keynote-content">
+                            <div class="keynote-details">
+                                <h5>ABSTRACT</h5>
+                                <p class="abstract">Music is shaped by both biological and cultural factors, but the extent of each influence is not fully understood. This is partly due to biases in recruitment, as studies often rely on English-speaking students. Additionally, existing behavioral techniques are frequently unsuited for cross-cultural research and lack the capability to capture rich and complex perceptual spaces. In this talk, I will discuss my work in addressing these limitations, covering two complementary lines of research. First, I will explore computational techniques and global fieldwork to examine how diverse populations—including small-scale societies and traditional music experts—conceptualize pitch, melody, and rhythm. Second, I will discuss the expansion of online studies using innovative methods such as tapping and singing, alongside efforts to broaden participant recruitment to speakers from over 60 countries. Our findings highlight the need to reassess assumptions about which musical elements are universally shared and which are shaped by cultural differences.</p>
+                                
+                                <h5>BIO</h5>
+                                <p class="bio">Nori Jacoby is an Assistant Professor at Cornell University and a Research Group Leader at the Max Planck Institute for Empirical Aesthetics in Frankfurt. His research explores the internal representations that shape sensory and cognitive abilities, examining how these representations are influenced by both innate biological factors and cultural experiences.To tackle these fundamental questions, he develops innovative methodologies, combining machine learning with behavioral experiments and scaling experimental research through large-scale online studies and global fieldwork. Nori earned his Ph.D. at the Edmond and Lily Safra Center for Brain Sciences (ELSC) at the Hebrew University of Jerusalem, under the supervision of Naftali Tishby and Merav Ahissar. He then pursued postdoctoral research at MIT in Josh McDermott's Computational Audition Lab, at UC Berkeley in Tom Griffiths's Computational Cognitive Science Lab, and as a Presidential Scholar in Society and Neuroscience at Columbia University.</p>
+                            </div>
+                            <button class="expand-button">Expand for details</button>
+                        </div>
                     </div>
-                    <button class="expand-button">Expand for details</button>
                 </div>
             </div>
         </section>
 
-        <!-- Schedule Section - Removed hover effect -->
+        <!-- Schedule Section -->
         <section id="schedule">
-            <h2>Schedule</h2>
-            <div class="category-legend">
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: var(--cultural-evolution-color);"></div>
-                    <span>Cultural Evolution & History</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: var(--cognition-experiments-color);"></div>
-                    <span>Cognition & Experiments</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: var(--ai-practice-color);"></div>
-                    <span>AI & Practice</span>
-                </div>
-            </div>
-            <div class="schedule">
-                <!-- Day 1 -->
-                <div class="schedule-day">
-                    <h3>Day 1<br /><small>April 23</small></h3>
-                    <div class="time-slot">
-                        <span class="time">9:00 AM</span>
-                        <span class="event">Introductions Over Coffee</span>
-                        <span class="location">IACS</span>
+            <div class="container">
+                <h2>Schedule</h2>
+                <div class="category-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--cultural-evolution-color);"></div>
+                        <span>Cultural Evolution & History</span>
                     </div>
-                    <div class="time-slot cultural-evolution">
-                        <span class="time">10:00 AM</span>
-                        <span class="event">Talks: Cultural Evolution &amp; History</span>
-                        <span class="location">IACS</span>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--cognition-experiments-color);"></div>
+                        <span>Cognition & Experiments</span>
                     </div>
-                    <div class="time-slot">
-                        <span class="time">12:00 PM</span>
-                        <span class="event">Lunch</span>
-                        <span class="location">IACS</span>
-                    </div>
-                    <div class="time-slot">
-                        <span class="time">2:00 PM</span>
-                        <span class="event">Prepared Questions (Mason)</span>
-                        <span class="location">IACS</span>
-                    </div>
-                    <div class="time-slot cognition-experiments">
-                        <span class="time">5:00-6:30 PM</span>
-                        <span class="event">Keynote 1: Nori Jacoby</span>
-                        <span class="location">Library (Room TBD)</span>
-                    </div>
-                    <div class="time-slot">
-                        <span class="time">7:00 PM</span>
-                        <span class="event">Dinner</span>
-                        <span class="location">TBD</span>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--ai-practice-color);"></div>
+                        <span>AI & Practice</span>
                     </div>
                 </div>
+                <div class="schedule">
+                    <!-- Day 1 -->
+                    <div class="schedule-day">
+                        <h3>Day 1<br /><small>April 23</small></h3>
+                        <div class="time-slots-container">
+                            <div class="time-slot">
+                                <span class="time">9:00 AM</span>
+                                <span class="event">Introductions Over Coffee</span>
+                                <span class="location">IACS</span>
+                            </div>
+                            <div class="time-slot cultural-evolution">
+                                <span class="time">10:00 AM</span>
+                                <span class="event">Talks: Cultural Evolution &amp; History</span>
+                                <span class="location">IACS</span>
+                            </div>
+                            <div class="time-slot">
+                                <span class="time">12:00 PM</span>
+                                <span class="event">Lunch</span>
+                                <span class="location">IACS</span>
+                            </div>
+                            <div class="time-slot">
+                                <span class="time">2:00 PM</span>
+                                <span class="event">Prepared Questions (Mason)</span>
+                                <span class="location">IACS</span>
+                            </div>
+                            <div class="time-slot cognition-experiments">
+                                <span class="time">5:00-6:30 PM</span>
+                                <span class="event">Keynote 1: Nori Jacoby</span>
+                                <span class="location">Library (Room TBD)</span>
+                            </div>
+                            <div class="time-slot">
+                                <span class="time">7:00 PM</span>
+                                <span class="event">Dinner</span>
+                                <span class="location">TBD</span>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Day 2 -->
-                <div class="schedule-day">
-                    <h3>Day 2<br /><small>April 24</small></h3>
-                    <div class="time-slot">
-                        <span class="time">9:00 AM</span>
-                        <span class="event">Coffee</span>
-                        <span class="location">IACS</span>
+                    <!-- Day 2 -->
+                    <div class="schedule-day">
+                        <h3>Day 2<br /><small>April 24</small></h3>
+                        <div class="time-slots-container">
+                            <div class="time-slot">
+                                <span class="time">9:00 AM</span>
+                                <span class="event">Coffee</span>
+                                <span class="location">IACS</span>
+                            </div>
+                            <div class="time-slot cognition-experiments">
+                                <span class="time">9:30 AM</span>
+                                <span class="event">Talks: Cognition &amp; Experiments</span>
+                                <span class="location">IACS</span>
+                            </div>
+                            <div class="time-slot">
+                                <span class="time">12:00 PM</span>
+                                <span class="event">Lunch</span>
+                                <span class="location">IACS</span>
+                            </div>
+                            <div class="time-slot">
+                                <span class="time">2:00 PM</span>
+                                <span class="event">Collaborative Brainstorming (Katie)</span>
+                                <span class="location">IACS</span>
+                            </div>
+                            <div class="time-slot ai-practice">
+                                <span class="time">5:00-6:30 PM</span>
+                                <span class="event">Keynote 2: Kate Armstrong</span>
+                                <span class="location">Humanities Institute (Room 1008)</span>
+                            </div>
+                            <div class="time-slot">
+                                <span class="time">7:00 PM</span>
+                                <span class="event">Dinner</span>
+                                <span class="location">TBD</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="time-slot cognition-experiments">
-                        <span class="time">9:30 AM</span>
-                        <span class="event">Talks: Cognition &amp; Experiments</span>
-                        <span class="location">IACS</span>
-                    </div>
-                    <div class="time-slot">
-                        <span class="time">12:00 PM</span>
-                        <span class="event">Lunch</span>
-                        <span class="location">IACS</span>
-                    </div>
-                    <div class="time-slot">
-                        <span class="time">2:00 PM</span>
-                        <span class="event">Collaborative Brainstorming (Katie)</span>
-                        <span class="location">IACS</span>
-                    </div>
-                    <div class="time-slot ai-practice">
-                        <span class="time">5:00-6:30 PM</span>
-                        <span class="event">Keynote 2: Kate Armstrong</span>
-                        <span class="location">Humanities Institute (Room 1008)</span>
-                    </div>
-                    <div class="time-slot">
-                        <span class="time">7:00 PM</span>
-                        <span class="event">Dinner</span>
-                        <span class="location">TBD</span>
-                    </div>
-                </div>
 
-                <!-- Day 3 -->
-                <div class="schedule-day">
-                    <h3>Day 3<br /><small>April 25</small></h3>
-                    <div class="time-slot">
-                        <span class="time">9:00 AM</span>
-                        <span class="event">Coffee</span>
-                        <span class="location">IACS</span>
-                    </div>
-                    <div class="time-slot ai-practice">
-                        <span class="time">9:30 AM</span>
-                        <span class="event">Talks: AI &amp; Practice</span>
-                        <span class="location">IACS</span>
-                    </div>
-                    <div class="time-slot">
-                        <span class="time">12:00-2:30 PM</span>
-                        <span class="event">Lunch &amp; Discussion</span>
-                        <span class="location">IACS</span>
-                    </div>
-                    <div class="time-slot">
-                        <span class="time">3:36 PM</span>
-                        <span class="event">Best Train to NYC</span>
-                        <span class="location">Stony Brook LIRR</span>
+                    <!-- Day 3 -->
+                    <div class="schedule-day">
+                        <h3>Day 3<br /><small>April 25</small></h3>
+                        <div class="time-slots-container">
+                            <div class="time-slot">
+                                <span class="time">9:00 AM</span>
+                                <span class="event">Coffee</span>
+                                <span class="location">IACS</span>
+                            </div>
+                            <div class="time-slot ai-practice">
+                                <span class="time">9:30 AM</span>
+                                <span class="event">Talks: AI &amp; Practice</span>
+                                <span class="location">IACS</span>
+                            </div>
+                            <div class="time-slot">
+                                <span class="time">12:00-2:30 PM</span>
+                                <span class="event">Lunch &amp; Discussion</span>
+                                <span class="location">IACS</span>
+                            </div>
+                            <div class="time-slot">
+                                <span class="time">3:36 PM</span>
+                                <span class="event">Best Train to NYC</span>
+                                <span class="location">Stony Brook LIRR</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
