@@ -103,7 +103,7 @@
             .container {
                 max-width: 1200px;
                 margin: 0 auto;
-                padding: 0 2rem;
+                padding: 0 1rem;
             }
 
             /* Header with textured gradient */
@@ -118,7 +118,7 @@
                 animation: gradientShift 15s ease infinite;
                 color: #fff;
                 text-align: center;
-                padding: 3.5rem 1rem;
+                padding: 2.5rem 1rem;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
                 position: relative;
                 overflow: hidden;
@@ -167,23 +167,23 @@
             /* Sections */
             section {
                 max-width: 1200px;
-                margin: 4rem auto;
-                padding: 0 2rem;
+                margin: 3rem auto;
+                padding: 0 1rem;
             }
             
             section:first-of-type {
-                margin-top: 3rem;
+                margin-top: 2rem;
             }
 
             /* Category legend */
             .category-legend {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 1.2rem;
-                margin-bottom: 2rem;
+                gap: 0.8rem;
+                margin-bottom: 1.5rem;
                 justify-content: center;
                 background-color: rgba(30, 30, 30, 0.7);
-                padding: 1.2rem;
+                padding: 1rem;
                 border-radius: var(--border-radius);
                 box-shadow: var(--box-shadow);
             }
@@ -191,10 +191,11 @@
             .legend-item {
                 display: flex;
                 align-items: center;
-                padding: 0.5rem 1rem;
+                padding: 0.4rem 0.8rem;
                 border-radius: 20px;
                 background-color: rgba(0, 0, 0, 0.2);
                 transition: var(--transition);
+                font-size: 0.9rem;
             }
             
             .legend-item:hover {
@@ -203,23 +204,23 @@
             }
             
             .legend-color {
-                width: 18px;
-                height: 18px;
+                width: 14px;
+                height: 14px;
                 border-radius: 50%;
-                margin-right: 10px;
+                margin-right: 8px;
                 box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
             }
 
             /* Participants Section */
             .participants-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 1.2rem;
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 0.8rem;
             }
             
             .participant {
                 background-color: var(--card-bg);
-                padding: 1rem;
+                padding: 0.7rem;
                 border-radius: var(--border-radius);
                 box-shadow: var(--box-shadow);
                 text-align: center;
@@ -245,16 +246,16 @@
             }
             
             .participant:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+                transform: translateY(-3px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
             }
             
             .participant a {
                 color: #2ecc71;
                 text-decoration: none;
-                padding: 0.5rem;
+                padding: 0.4rem;
                 display: block;
-                font-size: 1.05em;
+                font-size: 0.95em;
                 transition: var(--transition);
             }
             
@@ -279,10 +280,9 @@
             /* Keynotes Section */
             .keynotes-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 2.5rem;
-                margin: 2.5rem 0;
-                /* Remove grid's align-items property to allow cards to have their own height */
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+                margin: 2rem 0;
                 align-items: start;
             }
             
@@ -292,13 +292,12 @@
                 box-shadow: var(--box-shadow);
                 display: flex;
                 flex-direction: column;
-                /* Remove fixed height to allow natural expansion */
                 position: relative;
                 transition: var(--transition);
             }
             
             .keynote-header {
-                padding: 1.5rem;
+                padding: 1.2rem;
                 position: relative;
                 z-index: 1;
                 text-align: center;
@@ -329,12 +328,12 @@
             }
             
             .keynote-card img {
-                width: 160px;
-                height: 160px;
+                width: 120px;
+                height: 120px;
                 object-fit: cover;
                 border-radius: 50%;
-                margin: 0 auto 1.2rem;
-                border: 4px solid rgba(255, 255, 255, 0.2);
+                margin: 0 auto 1rem;
+                border: 3px solid rgba(255, 255, 255, 0.2);
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
                 transition: var(--transition);
             }
@@ -346,21 +345,21 @@
             
             .keynote-card h3 {
                 margin-bottom: 0.3rem;
-                font-size: 1.6em;
+                font-size: 1.4em;
                 text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             }
             
             .keynote-card h4 {
                 margin-top: 0.5rem;
                 margin-bottom: 1rem;
-                font-size: 1.1em;
+                font-size: 1em;
                 font-weight: 400;
                 opacity: 0.9;
             }
             
             .keynote-content {
                 background-color: var(--card-bg);
-                padding: 1.5rem;
+                padding: 1.2rem;
                 flex-grow: 1;
                 display: flex;
                 flex-direction: column;
@@ -368,8 +367,8 @@
             
             .keynote-details {
                 display: none;
-                margin-top: 1.2rem;
-                padding-top: 1.2rem;
+                margin-top: 1rem;
+                padding-top: 1rem;
                 border-top: 1px solid rgba(255, 255, 255, 0.1);
                 opacity: 0;
                 transform: translateY(10px);
@@ -383,18 +382,18 @@
             
             .keynote-details h5 {
                 margin-top: 0;
-                margin-bottom: 0.8rem;
+                margin-bottom: 0.6rem;
                 font-weight: 600;
-                font-size: 1.1em;
+                font-size: 1em;
                 color: #ffffff;
             }
             
             .keynote-details .abstract, 
             .keynote-details .bio {
                 margin-top: 0.5rem;
-                margin-bottom: 1.5rem;
-                font-size: 0.95em;
-                line-height: 1.7;
+                margin-bottom: 1.2rem;
+                font-size: 0.9em;
+                line-height: 1.6;
                 color: var(--text-secondary);
             }
             
@@ -402,13 +401,13 @@
                 background-color: rgba(0, 0, 0, 0.3);
                 border: none;
                 color: #fff;
-                padding: 0.7rem 1.2rem;
+                padding: 0.6rem 1rem;
                 border-radius: 30px;
                 cursor: pointer;
                 margin-top: auto;
                 transition: var(--transition);
                 font-family: "Montserrat", sans-serif;
-                font-size: 0.9em;
+                font-size: 0.85em;
                 font-weight: 500;
                 align-self: center;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -427,15 +426,15 @@
             /* Schedule Section */
             .schedule {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 2rem;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
             }
             
             .schedule-day {
                 background: var(--card-bg);
                 border-radius: var(--border-radius);
                 box-shadow: var(--box-shadow);
-                padding: 1.5rem;
+                padding: 1.2rem;
                 height: 100%;
                 position: relative;
                 overflow: hidden;
@@ -457,10 +456,10 @@
             
             .schedule-day h3 {
                 text-align: center;
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.2rem;
                 font-weight: 600;
-                font-size: 1.5em;
-                padding-bottom: 0.8rem;
+                font-size: 1.3em;
+                padding-bottom: 0.6rem;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
             
@@ -480,16 +479,16 @@
                 position: absolute;
                 top: 0;
                 bottom: 0;
-                left: 10px;
+                left: 8px;
                 width: 2px;
                 background-color: rgba(255, 255, 255, 0.1);
             }
             
             .time-slot {
                 position: relative;
-                padding-left: 2rem;
-                margin-bottom: 1.5rem;
-                padding-bottom: 1.5rem;
+                padding-left: 1.8rem;
+                margin-bottom: 1.2rem;
+                padding-bottom: 1.2rem;
                 border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
             }
             
@@ -502,7 +501,7 @@
             .time-slot::before {
                 content: '';
                 position: absolute;
-                left: 6px;
+                left: 4px;
                 top: 8px;
                 width: 10px;
                 height: 10px;
@@ -526,31 +525,41 @@
             .time {
                 font-weight: 600;
                 display: block;
-                margin-bottom: 0.4rem;
-                font-size: 1.05em;
+                margin-bottom: 0.3rem;
+                font-size: 1em;
             }
             
             .time-slot .event {
                 display: block;
-                font-size: 1.1em;
-                margin-bottom: 0.3rem;
+                font-size: 1em;
+                margin-bottom: 0.2rem;
             }
             
             .time-slot .location {
                 display: block;
-                font-size: 0.9em;
+                font-size: 0.85em;
                 color: #27ae60;
-                margin-top: 0.3rem;
+                margin-top: 0.2rem;
             }
 
             /* Responsive Adjustments */
             @media (max-width: 1024px) {
                 section {
-                    padding: 0 1.5rem;
+                    padding: 0 1rem;
+                    margin: 2.5rem auto;
                 }
                 
                 .keynotes-grid {
-                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                    gap: 1.5rem;
+                }
+                
+                h1 {
+                    font-size: 2.8em;
+                }
+                
+                h2 {
+                    font-size: 2em;
                 }
             }
             
@@ -560,42 +569,176 @@
                 }
                 
                 header h1 {
-                    font-size: 2.5em;
-                }
-                
-                h2 {
-                    font-size: 1.8em;
-                }
-                
-                .participants-grid {
-                    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                }
-                
-                .keynotes-grid {
-                    gap: 2rem;
-                }
-                
-                .schedule {
-                    grid-template-columns: 1fr;
-                }
-            }
-            
-            @media (max-width: 480px) {
-                header h1 {
-                    font-size: 2em;
+                    font-size: 2.2em;
                 }
                 
                 header h2 {
                     font-size: 1.2em;
                 }
                 
-                .participant a {
+                header h3 {
+                    font-size: 1.1em;
+                }
+                
+                h2 {
+                    font-size: 1.6em;
+                }
+                
+                .participants-grid {
+                    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+                    gap: 0.7rem;
+                }
+                
+                .keynotes-grid {
+                    gap: 1.5rem;
+                }
+                
+                .schedule {
+                    grid-template-columns: 1fr;
+                }
+                
+                .category-legend {
+                    padding: 0.8rem;
+                    gap: 0.6rem;
+                }
+                
+                .legend-item {
+                    padding: 0.3rem 0.6rem;
+                    font-size: 0.8rem;
+                }
+                
+                .legend-color {
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 6px;
+                }
+                
+                section {
+                    margin: 2rem auto;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .container {
+                    padding: 0 0.8rem;
+                }
+                
+                header h1 {
+                    font-size: 1.8em;
+                }
+                
+                header h2 {
+                    font-size: 1em;
+                }
+                
+                header h3 {
+                    font-size: 0.9em;
+                }
+                
+                h2 {
+                    font-size: 1.4em;
+                }
+                
+                p {
                     font-size: 0.95em;
                 }
                 
+                .participants-grid {
+                    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+                    gap: 0.6rem;
+                }
+                
+                .participant {
+                    padding: 0.5rem;
+                }
+                
+                .participant a {
+                    font-size: 0.85em;
+                    padding: 0.3rem;
+                }
+                
                 .keynote-card img {
-                    width: 130px;
-                    height: 130px;
+                    width: 100px;
+                    height: 100px;
+                }
+                
+                .keynote-card h3 {
+                    font-size: 1.2em;
+                }
+                
+                .keynote-card h4 {
+                    font-size: 0.9em;
+                }
+                
+                .keynote-header {
+                    padding: 1rem;
+                }
+                
+                .keynote-content {
+                    padding: 1rem;
+                }
+                
+                .expand-button {
+                    padding: 0.5rem 0.8rem;
+                    font-size: 0.8em;
+                }
+                
+                .schedule-day {
+                    padding: 1rem;
+                }
+                
+                .schedule-day h3 {
+                    font-size: 1.2em;
+                }
+                
+                .time-slot {
+                    padding-left: 1.5rem;
+                    margin-bottom: 1rem;
+                    padding-bottom: 1rem;
+                }
+                
+                .time {
+                    font-size: 0.9em;
+                }
+                
+                .time-slot .event {
+                    font-size: 0.9em;
+                }
+                
+                .time-slot .location {
+                    font-size: 0.8em;
+                }
+                
+                .time-slots-container::before {
+                    left: 6px;
+                }
+                
+                .time-slot::before {
+                    left: 2px;
+                    width: 8px;
+                    height: 8px;
+                }
+                
+                .category-legend {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 0.5rem;
+                }
+                
+                .legend-item {
+                    width: 100%;
+                }
+            }
+            
+            /* Fix for category legend on small screens */
+            @media (max-width: 380px) {
+                .category-legend {
+                    padding: 0.7rem;
+                }
+                
+                .legend-item {
+                    padding: 0.3rem 0.5rem;
+                    font-size: 0.75rem;
                 }
             }
         </style>
@@ -653,8 +796,9 @@
                     <a href="https://masonyoungblood.com/" target="_blank">Mason Youngblood</a> (IACS), 
                     <a href="https://www.linkedin.com/in/katie-mudd-23512a111/" target="_blank">Katie Mudd</a> (IACS), 
                     <a href="https://www.stonybrook.edu/commcms/music/people/faculty-and-staff/composition/margaret_schedel.php" target="_blank">Margaret Schedel</a> (Music), 
-                    <a href="https://owenrambow.com/" target="_blank">Owen Rambow</a> (Linguistics), and 
-                    <a href="https://jkodner05.github.io/" target="_blank">Jordan Kodner</a> (Linguistics) at Stony Brook University, 
+                    <a href="https://owenrambow.com/" target="_blank">Owen Rambow</a> (Linguistics), 
+                    <a href="https://jkodner05.github.io/" target="_blank">Jordan Kodner</a> (Linguistics), and
+                    <a href="https://www.brookebelisle.com/" target="_blank">Brooke Belisle</a> (Art) at Stony Brook University 
                     from 23-25 April 2025. This workshop will bring together experts from cognitive science, cultural evolution, and related fields, 
                     alongside practicing artists and humanities scholars, to explore the mechanisms driving creativity in language, music, and other domains.
                 </p>
